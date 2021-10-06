@@ -10,13 +10,31 @@ using System.Windows.Forms;
 
 namespace Fase1SteveenEcheverri
 {
-    public partial class reportScreen : Form
+    public partial class ReportScreen : Form
     {
-        public reportScreen()
+        Employee theEmployee = new Employee();
+
+        public ReportScreen(
+            int idEmployee,
+            string fullName,
+            string gender,
+            string position,
+            int workingDays,
+            int dailySalary
+        )
         {
             InitializeComponent();
-            string payDay = DateTime.Now.ToString("dd-MM-yyyy");
+            string payDay = DateTime.Now.ToString("dd/MM/yyyy");
             txtPayDay.Text = payDay;
+
+            label9.Text = fullName;
+            label10.Text = Convert.ToString(idEmployee);
+            label11.Text = gender;
+            label12.Text = position;
+            label13.Text = Convert.ToString(dailySalary);
+            label14.Text = Convert.ToString(workingDays);
+
+            label15.Text = Convert.ToString(theEmployee.CalculateEarnedSalary(workingDays, dailySalary));
         }
     }
 }

@@ -74,6 +74,7 @@ namespace Fase1SteveenEcheverri
                 {
                     theNomina.Gender = "Femenino";
                 }
+                theNomina.Position = cmbPosition.SelectedItem.ToString();
                 theNomina.WorkingDays = txtDays.Text;
                 theNomina.DailySalary = txtSalary.Text;
                 MessageBox.Show("Datos guardados con exito!");
@@ -81,6 +82,20 @@ namespace Fase1SteveenEcheverri
             {
                 MessageBox.Show("Error al guardar los datos!");
             }
+        }
+
+        private void btnCalculatePayroll_Click(object sender, EventArgs e)
+        {
+            ReportScreen calculateReport = new ReportScreen(
+                theNomina.IdEmployee,
+                theNomina.FullName,
+                theNomina.Gender,
+                theNomina.Position,
+                Convert.ToInt32(theNomina.WorkingDays),
+                Convert.ToInt32(theNomina.DailySalary)
+            );
+            calculateReport.Show();
+            this.Hide();
         }
     }
 }

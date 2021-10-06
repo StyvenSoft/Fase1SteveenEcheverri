@@ -220,6 +220,7 @@
             this.btnCalculatePayroll.TabIndex = 2;
             this.btnCalculatePayroll.Text = "Calcular nómina";
             this.btnCalculatePayroll.UseVisualStyleBackColor = true;
+            this.btnCalculatePayroll.Click += new System.EventHandler(this.btnCalculatePayroll_Click);
             // 
             // btnExitApp
             // 
