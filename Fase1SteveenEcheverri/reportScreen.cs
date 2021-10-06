@@ -15,6 +15,8 @@ namespace Fase1SteveenEcheverri
         public reportScreen()
         {
             InitializeComponent();
+            string payDay = DateTime.Now.ToString("dd-MM-yyyy");
+            txtPayDay.Text = payDay;
         }
     }
 }

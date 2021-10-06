@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDays = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxFemale = new System.Windows.Forms.CheckBox();
+            this.checkBoxMale = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFullName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdentification = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSaveRegister = new System.Windows.Forms.Button();
+            this.btnCalculatePayroll = new System.Windows.Forms.Button();
+            this.btnExitApp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtSalary);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtDays);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbPosition);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtFullName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIdentification);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(87, 32);
             this.groupBox1.Name = "groupBox1";
@@ -71,12 +71,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos basicos del trabajador";
             // 
-            // textBox4
+            // txtSalary
             // 
-            this.textBox4.Location = new System.Drawing.Point(146, 241);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 11;
+            this.txtSalary.Enabled = false;
+            this.txtSalary.Location = new System.Drawing.Point(146, 241);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(100, 20);
+            this.txtSalary.TabIndex = 11;
             // 
             // label6
             // 
@@ -87,12 +88,12 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Salario día";
             // 
-            // textBox3
+            // txtDays
             // 
-            this.textBox3.Location = new System.Drawing.Point(146, 199);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 9;
+            this.txtDays.Location = new System.Drawing.Point(146, 199);
+            this.txtDays.Name = "txtDays";
+            this.txtDays.Size = new System.Drawing.Size(100, 20);
+            this.txtDays.TabIndex = 9;
             // 
             // label5
             // 
@@ -103,20 +104,21 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Días laborados";
             // 
-            // comboBox1
+            // cmbPosition
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Items.AddRange(new object[] {
             "Electricista",
             "Mecánico",
             "Soldador",
             "Servicios generales",
             "Administrativo"});
-            this.comboBox1.Location = new System.Drawing.Point(146, 153);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(227, 21);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.Text = "Selecciona";
+            this.cmbPosition.Location = new System.Drawing.Point(146, 153);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(227, 21);
+            this.cmbPosition.TabIndex = 7;
+            this.cmbPosition.Text = "Selecciona";
+            this.cmbPosition.SelectedIndexChanged += new System.EventHandler(this.cmbPosition_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -129,33 +131,35 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.checkBoxFemale);
+            this.groupBox2.Controls.Add(this.checkBoxMale);
             this.groupBox2.Location = new System.Drawing.Point(146, 94);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(271, 45);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
-            // checkBox2
+            // checkBoxFemale
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(147, 19);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(72, 17);
-            this.checkBox2.TabIndex = 2;
-            this.checkBox2.Text = "Femenino";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxFemale.AutoSize = true;
+            this.checkBoxFemale.Location = new System.Drawing.Point(147, 19);
+            this.checkBoxFemale.Name = "checkBoxFemale";
+            this.checkBoxFemale.Size = new System.Drawing.Size(72, 17);
+            this.checkBoxFemale.TabIndex = 2;
+            this.checkBoxFemale.Text = "Femenino";
+            this.checkBoxFemale.UseVisualStyleBackColor = true;
+            this.checkBoxFemale.CheckedChanged += new System.EventHandler(this.checkBoxFemale_CheckedChanged);
             // 
-            // checkBox1
+            // checkBoxMale
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(24, 19);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(74, 17);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Masculino";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxMale.AutoSize = true;
+            this.checkBoxMale.Location = new System.Drawing.Point(24, 19);
+            this.checkBoxMale.Name = "checkBoxMale";
+            this.checkBoxMale.Size = new System.Drawing.Size(74, 17);
+            this.checkBoxMale.TabIndex = 1;
+            this.checkBoxMale.Text = "Masculino";
+            this.checkBoxMale.UseVisualStyleBackColor = true;
+            this.checkBoxMale.CheckedChanged += new System.EventHandler(this.checkBoxMale_CheckedChanged);
             // 
             // label3
             // 
@@ -166,12 +170,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Género";
             // 
-            // textBox2
+            // txtFullName
             // 
-            this.textBox2.Location = new System.Drawing.Point(146, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtFullName.Location = new System.Drawing.Point(146, 68);
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(227, 20);
+            this.txtFullName.TabIndex = 3;
             // 
             // label2
             // 
@@ -182,12 +186,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre Completo";
             // 
-            // textBox1
+            // txtIdentification
             // 
-            this.textBox1.Location = new System.Drawing.Point(146, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtIdentification.Location = new System.Drawing.Point(146, 34);
+            this.txtIdentification.Name = "txtIdentification";
+            this.txtIdentification.Size = new System.Drawing.Size(227, 20);
+            this.txtIdentification.TabIndex = 1;
             // 
             // label1
             // 
@@ -198,32 +202,33 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "No. Identificación";
             // 
-            // button1
+            // btnSaveRegister
             // 
-            this.button1.Location = new System.Drawing.Point(87, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Guardar registro";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSaveRegister.Location = new System.Drawing.Point(87, 358);
+            this.btnSaveRegister.Name = "btnSaveRegister";
+            this.btnSaveRegister.Size = new System.Drawing.Size(108, 23);
+            this.btnSaveRegister.TabIndex = 1;
+            this.btnSaveRegister.Text = "Guardar registro";
+            this.btnSaveRegister.UseVisualStyleBackColor = true;
+            this.btnSaveRegister.Click += new System.EventHandler(this.btnSaveRegister_Click);
             // 
-            // button2
+            // btnCalculatePayroll
             // 
-            this.button2.Location = new System.Drawing.Point(257, 358);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Calcular nómina";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCalculatePayroll.Location = new System.Drawing.Point(257, 358);
+            this.btnCalculatePayroll.Name = "btnCalculatePayroll";
+            this.btnCalculatePayroll.Size = new System.Drawing.Size(125, 23);
+            this.btnCalculatePayroll.TabIndex = 2;
+            this.btnCalculatePayroll.Text = "Calcular nómina";
+            this.btnCalculatePayroll.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnExitApp
             // 
-            this.button3.Location = new System.Drawing.Point(437, 358);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Salir de la aplicación";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnExitApp.Location = new System.Drawing.Point(437, 358);
+            this.btnExitApp.Name = "btnExitApp";
+            this.btnExitApp.Size = new System.Drawing.Size(118, 23);
+            this.btnExitApp.TabIndex = 3;
+            this.btnExitApp.Text = "Salir de la aplicación";
+            this.btnExitApp.UseVisualStyleBackColor = true;
             // 
             // EmployeeScreen
             // 
@@ -231,9 +236,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(624, 441);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnExitApp);
+            this.Controls.Add(this.btnCalculatePayroll);
+            this.Controls.Add(this.btnSaveRegister);
             this.Controls.Add(this.groupBox1);
             this.Name = "EmployeeScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -251,20 +256,20 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxFemale;
+        private System.Windows.Forms.CheckBox checkBoxMale;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtIdentification;
+        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDays;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPosition;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSaveRegister;
+        private System.Windows.Forms.Button btnCalculatePayroll;
+        private System.Windows.Forms.Button btnExitApp;
     }
 }

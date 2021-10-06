@@ -15,6 +15,8 @@ namespace Fase1SteveenEcheverri
         public HomeScreen()
         {
             InitializeComponent();
+
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
