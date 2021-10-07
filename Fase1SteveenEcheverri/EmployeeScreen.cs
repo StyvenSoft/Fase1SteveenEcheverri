@@ -62,8 +62,19 @@ namespace Fase1SteveenEcheverri
 
         private void btnSaveRegister_Click(object sender, EventArgs e)
         {
-            if (txtIdentification.Text != "")
+            if (txtIdentification.Text != "" &&
+                txtFullName.Text != "" &&
+                txtDays.Text != "" &&
+                txtSalary.Text != "")
             {
+                int idEmployee;
+
+                if (!int.TryParse(txtIdentification.Text, out idEmployee))
+                {
+                    errorProvider1.SetError(txtIdentification, "Debe ingresar un número de estrato");
+                    return;
+                }
+                
                 theNomina.IdEmployee = Convert.ToInt32(txtIdentification.Text);
                 theNomina.FullName = txtFullName.Text;
                 if (checkBoxMale.Checked == true)
@@ -80,12 +91,25 @@ namespace Fase1SteveenEcheverri
                 MessageBox.Show("Datos guardados con exito!");
             } else
             {
-                MessageBox.Show("Error al guardar los datos!");
+                MessageBox.Show("Dede ingresar toda la información en los campos!");
             }
         }
 
         private void btnCalculatePayroll_Click(object sender, EventArgs e)
         {
+            if (txtFullName.Text == "" ||
+                txtDays.Text == "" ||
+                txtIdentification.Text == "" ||
+                txtSalary.Text == ""
+            )
+            {
+                errorProvider1.SetError(txtFullName, "Debe ingresar un nombre completo de empleado");
+                errorProvider1.SetError(txtDays, "Debe ingresar los días laborados");
+                errorProvider1.SetError(txtIdentification, "Debe ingresar un número de Identificación");
+                errorProvider1.SetError(txtSalary, "Debe seleccionar un cargo");
+                return;
+            }
+
             ReportScreen calculateReport = new ReportScreen(
                 theNomina.IdEmployee,
                 theNomina.FullName,
@@ -96,6 +120,11 @@ namespace Fase1SteveenEcheverri
             );
             calculateReport.Show();
             this.Hide();
+        }
+
+        private void btnExitApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

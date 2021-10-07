@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,8 +47,10 @@
             this.btnSaveRegister = new System.Windows.Forms.Button();
             this.btnCalculatePayroll = new System.Windows.Forms.Button();
             this.btnExitApp = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -230,6 +233,11 @@
             this.btnExitApp.TabIndex = 3;
             this.btnExitApp.Text = "Salir de la aplicación";
             this.btnExitApp.UseVisualStyleBackColor = true;
+            this.btnExitApp.Click += new System.EventHandler(this.btnExitApp_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // EmployeeScreen
             // 
@@ -248,6 +256,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,5 +281,6 @@
         private System.Windows.Forms.Button btnSaveRegister;
         private System.Windows.Forms.Button btnCalculatePayroll;
         private System.Windows.Forms.Button btnExitApp;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

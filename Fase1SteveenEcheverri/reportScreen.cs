@@ -36,5 +36,12 @@ namespace Fase1SteveenEcheverri
 
             label15.Text = Convert.ToString(theEmployee.CalculateEarnedSalary(workingDays, dailySalary));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EmployeeScreen employeeScreen = new EmployeeScreen();
+            employeeScreen.Show();
+            this.Close();
+        }
     }
 }
